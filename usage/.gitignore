@@ -1,1 +1,18 @@
+# Android / CMake build outputs
+build/
+.cxx/
+*.so
+*.o
+*.a
+
+# Generated plugin zip packages
+*.zip
+output/
+dist/
+
+# OS / Editor temporary files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
 
