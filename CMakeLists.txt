@@ -3,6 +3,9 @@ project("culling_plugin")
 
 set(CMAKE_CXX_STANDARD 17)
 
+# Tell the compiler to look inside src/ for header files like culling.hpp
+include_directories(src)
+
 add_library(
     culling_plugin
     SHARED
