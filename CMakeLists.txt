@@ -15,4 +15,3 @@ target_link_libraries(
     culling_plugin
     ${log-lib}
 )
-
