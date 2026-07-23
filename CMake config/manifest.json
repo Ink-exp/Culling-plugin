@@ -1,1 +1,11 @@
-
+{
+  "format_version": 1,
+  "header": {
+    "name": "Culling Plugin",
+    "description": "High-performance native mod providing aggressive entity/particle culling and FPS frame rate uncapping for LeviLauncher.",
+    "uuid": "7f8a91b2-0c1d-4e5f-9a8b-1234567890ab",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "entry": "libculling_plugin.so"
+}
