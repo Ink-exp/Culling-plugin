@@ -4,8 +4,7 @@
 
 **A high-performance, multithreaded native C++ engine optimization module for Minecraft Bedrock on Android.**
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/culling-plugin/build.yml?branch=main&style=for-the-badge&logo=github)](https://github.com/YOUR_USERNAME/culling-plugin/actions)
-[![License](https://img.shields.io/github/license/YOUR_USERNAME/culling-plugin?style=for-the-badge&color=blue)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Ink-exp/Culling-plugin/build.yml?branch=main&style=for-the-badge&logo=github)](https://github.com/Ink-exp/Culling-plugin/actions)
 [![Platform](https://img.shields.io/badge/Platform-Android%20(ARM64)--v8a-brightgreen?style=for-the-badge&logo=android)](https://developer.android.com)
 [![NDK Version](https://img.shields.io/badge/NDK-r25c+-orange?style=for-the-badge&logo=cmake)](https://developer.android.com/ndk)
 
@@ -58,8 +57,8 @@
 ```
 ## 📥 Quick Start
 ### Installation via LeviLauncher
- 1. Navigate to the Releases Page (or download the artifact from **GitHub Actions**).
- 2. Download culling-plugin.zip.
+ 1. Navigate to the **Actions** tab in this repository.
+ 2. Select the latest successful workflow run and download CullingPlugin-Release.
  3. Open **LeviLauncher** on your Android device.
  4. Navigate to **Modules / Native Mods** ➔ **Import**.
  5. Select culling-plugin.zip and restart the launcher.
@@ -78,17 +77,17 @@ The plugin behavior can be configured inside manifest.json or dynamically at sta
 ### Local Compilation
 ```bash
 # Clone repository
-git clone [https://github.com/YOUR_USERNAME/culling-plugin.git](https://github.com/YOUR_USERNAME/culling-plugin.git)
-cd culling-plugin
+git clone [https://github.com/Ink-exp/Culling-plugin.git](https://github.com/Ink-exp/Culling-plugin.git)
+cd Culling-plugin
 
 # Configure CMake targeting ARM64
-mkdir build && cd build
-cmake -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake \
+cmake -B build \
+      -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake \
       -DANDROID_ABI=arm64-v8a \
-      -DANDROID_PLATFORM=android-28 ..
+      -DANDROID_PLATFORM=android-28
 
 # Compile shared library
-make -j$(nproc)
+cmake --build build --parallel
 
 ```
 The output binary libculling_plugin.so will be created inside the build/ directory.
